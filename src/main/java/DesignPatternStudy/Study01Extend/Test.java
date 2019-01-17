@@ -7,4 +7,13 @@ package DesignPatternStudy.Study01Extend;
  **/
 public class Test {
 
+    public static void main(String[] args) {
+        Solider solider = new Solider();
+        solider.setGun(new MachineGun());
+        solider.kill();
+
+
+        AbstractGun abstractGun = new MachineGun();
+        abstractGun.shoot();
+    }
 }
