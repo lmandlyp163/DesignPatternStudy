@@ -1,0 +1,26 @@
+@startuml
+interface Porduct
+class PorductA
+class PorductB
+class PorductC
+
+
+class FactoryClientA
+class Test
+
+Porduct : createCar()
+PorductA : createCar()
+PorductB : createCar()
+PorductC : createCar()
+FactoryClientA : createProduct()
+
+Porduct <|-- PorductA
+Porduct <|-- PorductB
+Porduct <|-- PorductC
+
+
+
+Test ..> FactoryClientA
+Test ..> Porduct
+
+@enduml

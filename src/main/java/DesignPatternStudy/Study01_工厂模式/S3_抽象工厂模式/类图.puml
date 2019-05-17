@@ -1,0 +1,49 @@
+@startuml
+interface PorductA
+class PorductA1
+class PorductA2
+
+interface PorductB
+class PorductB1
+class PorductB2
+
+
+abstract AbstractFactory
+class FactoryClientA1
+class FactoryClientA2
+
+
+PorductA : printA()
+PorductA1 : printA()
+PorductA2 : printA()
+
+PorductB : printB()
+PorductB1 : printB()
+PorductB2 : printB()
+
+
+AbstractFactory : createCarA()
+AbstractFactory : createCarB()
+
+FactoryClientA1 : createCarA()
+FactoryClientA1 : createCarB()
+
+FactoryClientA2 : createCarA()
+FactoryClientA2 : createCarB()
+
+AbstractFactory <|-- FactoryClientA1
+AbstractFactory <|-- FactoryClientA2
+
+PorductA <|-- PorductA1
+PorductA <|-- PorductA2
+PorductB <|-- PorductB1
+PorductB <|-- PorductB2
+
+
+FactoryClientA1 ..> PorductA1
+FactoryClientA1 ..> PorductB1
+
+FactoryClientA2 ..> PorductA2
+FactoryClientA2 ..> PorductB2
+
+@enduml
